@@ -4,30 +4,41 @@ body {
 }
 
 .welcome_bg_image{
-	background: url('http://gdurl.com/Nqdf') no-repeat top left;
+	background: url('images/Project1-HP-bg-001.jpg') no-repeat top left;
 	background-size:cover;
+	margin-top: -50px;
+
+}
+.welcome_content{
+	margin-left: 200px;
+	margin-right:200px;
 }
 
-#game_logo {
+img.logo {
+    float: right;
+    width: 200px;
+    margin-top: 150px;
+    margin-right: 150px;
     position: relative;
-		width: 100px;
-		height: 80px;
 }
 
-#logo img {
-    position: absolute;
-    top: 0px;
-	}
-
-.welcome_box{
-	width: 100%;
-	height:900px;
-	margin-left:auto;
-	margin-right:auto;
+img.scroll_box {
+    margin-left: 100px;
 }
 
+.welcome_content{
+	opacity:1 !important;
+}
 
+.player1_left{
+	float:left;
+	width:50%;
+}
 
+.player2_right{
+	float:right;
+	width:50%;
+}
 
 
 .welcome_content{

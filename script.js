@@ -1,3 +1,3 @@
-$("#start_quiz").click(function() {
+$("#startBtn").click(function () {
  console.log('in');
 });
