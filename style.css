@@ -7,11 +7,13 @@ body {
 	background: url('images/Project1-HP-bg-001.jpg') no-repeat top left;
 	background-size:cover;
 	margin-top: -50px;
-
 }
-.welcome_content{
-	margin-left: 200px;
-	margin-right:200px;
+
+.container {
+    width: 1080px;
+    height: auto;
+    align-content: center;
+    margin-left: 10px;
 }
 
 img.logo {
@@ -22,8 +24,17 @@ img.logo {
     position: relative;
 }
 
-img.scroll_box {
-    margin-left: 100px;
+.center{
+	margin-left: 110px;
+	margin-right:200px;
+}
+
+#instructions {
+    background: url(images/scrollbg-01.png) no-repeat;
+    float: inherit;
+    width: 100%;
+    height: 500px;
+    margin-top: 230px;
 }
 
 .welcome_content{

@@ -13,24 +13,52 @@
         <img src="images/project1-logo.png" class="logo"/>
     </div>
     <div class = "container">
-    <!-- <div class="welcome_box"> -->
-    <header>
-      <div class="center">
-        <h1>The Oracle sees it all</h1>
-      </div>
-    </header>
-        <img src="images/scrollbg-01.png" class="scroll_box"/>
-
-        <section id="instructions" class="center">
-          <p>Welcome to Lorem ipsum dolor sit amet,
+          <h1 class = 'gameTitle'>The Oracle sees it all</h1>
+          <section id="instructions" class="center">
+          Welcome to Lorem ipsum dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          <br>
           <button id="startBtn">START QUIZ</button>
+        
         </section>
-    </div>
+        <section id="quiz">
+            <div>
+              <h3 class="left">Score:  <span id="displayScore">0</span></h3>
+              <h3 class="right">Question: <span id="displayQCount">1</span> of  5</h3>
+            </div>
+            <div>
+              <h2 id="askQuestion" class="center"></h2>
+              <form id="form">
+              <div>
+                <input id="label0" type="radio" name="o ption" value="">
+                <label id="answer0" for=""></label>
+              </div>
+              <div>
+                <input id="label1" type="radio" name="option" value="">
+                <label id="answer1" for=""></label>
+              </div>
+              <div>
+                <input id="label2" type="radio" name="option" value="">
+                <label id="answer2" for=""></label>
+              </div>
+              <div>
+                <input id="label3" type="radio" name="option" value="">
+                <label id="answer3" for=""></label>
+              </div>
+              </form>
+              </div>
+              <button id="submitBtn">Submit</button>
+        </section>
+      </div>
+    <section id="showScore">
+      <h2 id="inform" class="center"></h2>
+      <button id="resetBtn">Try Again?</button>
+    </section>
   </div>
 <script src="script.js" charset="utf-8"></script>
+</body>
 </html>
