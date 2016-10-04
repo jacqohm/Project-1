@@ -1,6 +1,26 @@
-$( document ).ready(function() {
-    // console.log( "ready!" );
+$(document).ready(function() {
+  $("#quiz").hide();
 });
+
+$("#start_quiz").click(function() {
+	$('.welcome_box').hide();
+	$('.player_box').show();
+});
+
+$("#submitNameBtn").click(function() {
+	$('.player_box').hide();
+  $('#quiz').show();
+  // $('askQuestion').text('hi');
+});
+
+var quiz = document.getElementById("quiz");
+var askQuestion = document.getElementById("askQuestion");
+var submitBtn = document.getElementById("submitBtn");
+var checkedRadio;
+var allRadios;
+var i;
+var score;
+var numberOfQues= 10;
 
 var questions = [
   {
@@ -65,26 +85,49 @@ var questions = [
   }
 ];
 
+$( document ).ready(function() {
+	i=0;
+    currentQuestion();
+	console.log(correctAnswer());
+});
+
 // You will need to declare the following functions:
-numberOfQuestions()
-
+function numberOfQuestions() {
+	return questions.length;
+}
 // It should return an integer that is the number of questions in a game
-currentQuestion()
 
+function currentQuestion(){
+	if (i < 10) {
+        askQuestion.innerHTML = questions[i].question;
+        for (var k = 0; k < 4; k++) {
+            document.getElementById("answer" + k).innerHTML = questions[i].choices[k];
+            document.getElementById("answer" + k).setAttribute("for", questions[i].choices[k]);
+            document.getElementById("label" + k).setAttribute("value", questions[i].choices[k]);
+        }
+    }
+	return i;
+}
 // It should return an integer that is the zero-based index of the current question in the quiz
-correctAnswer()
 
+function correctAnswer(){
+	return questions[currentQuestion()].correct;
+}
 // It should return an integer that is the zero-based index the correct answer for the currrent question
-numberOfChoices()
+
+function numberOfChoices(){
+}
 
 // It should return an integer that is the number of choices for the current question
 playTurn(choice)
 
-// It should take a single integer, which specifies which choice the current player wants to make. It should return a boolean true/false if the answer is correct.
+// It should take a single integer, which specifies which choice the current player wants to make.
+// It should return a boolean true/false if the answer is correct.
 isGameOver()
 
 // It should return a true or false if the quiz is over.
 whoWon()
 
-// It should return 0 if the game is not yet over, else it should return either 1 or 2 depending on which player won. It should return 3 if the game is a draw.
+// It should return 0 if the game is not yet over, else it should return either 1 or 2 depending on which player won.
+// It should return 3 if the game is a draw.
 restart()
