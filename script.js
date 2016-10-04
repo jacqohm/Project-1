@@ -1,14 +1,16 @@
 
-var quiz = document.getElementById("quiz");
+// var quiz = document.getElementById("quiz");
 var askQuestion = document.getElementById("askQuestion");
-var submitBtn = document.getElementById("submitButton");
+var submitButton = document.getElementById("submitButton");
+var resetBtn = document.getElementById("resetBtn");
+var replayBtn = document.getElementById("replayBtn");
 var player1_name;
 var player2_name;
 var checkedRadio;
 var allRadios;
 var counter = 0;
 var qnsNum;
-var score;
+// var score;
 var currentPlayer = "Player 1";
 var QnsP1 = 1;
 var QnsP2 = 1;
@@ -78,11 +80,20 @@ $("#start_quiz").click(function() {
 	$('.welcome_box').hide();
 	$('.player_box').show();
 });
-
+// var getRand = (function() {
+//     var nums = [0,1,2,3,4,5,6];
+//     var current = [];
+//     function rand(n) {
+//         return (Math.random() * n)|0;
+//     }
+//     return function() {
+//       if (!current.length) current = nums.slice();
+//       return current.splice(rand(current.length), 1);
+//     }
+// }());
 function currentQuestion() {
 	if (counter < 10) {
     qnsNum = Math.round(Math.random() *10);
-    console.log(qnsNum);
         askQuestion.innerHTML = questions[qnsNum].question;
         for (var k = 0; k < 4; k++) {
             document.getElementById("answer" + k).innerHTML = questions[qnsNum].choices[k];
@@ -94,12 +105,11 @@ function currentQuestion() {
       $('#result_box').show();
         if (scoreP1 > scoreP2) {
           $('#winner').html(player1_name);
-          console.log('winner1');
+          // console.log('winner1');
         } else if (scoreP2 > scoreP1){
           $('#winner').html(player2_name);
-          console.log('winner2');
+          // console.log('winner2');
         } else {
-
           $('#result_box').html("It is a tie");
         }
     }
@@ -184,12 +194,13 @@ function getResults() {
         }
 }
 
-
-
-//
-// function getResults() {
-//   if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
-//     score++;
-//     displayScore.innerHTML = score;
-//   }
-// }
+replayBtn.addEventListener("click", function() {
+  $('#quiz').hide();
+  $('#result_box').hide();
+  $('.welcome_box').show();
+  QnsP1 = 1;
+  QnsP2 = 1;
+  counter = 0;
+  currentPlayer = 'Player 1';
+  deselectRadios();
+});
