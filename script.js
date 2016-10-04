@@ -10,7 +10,6 @@ $("#start_quiz").click(function() {
 $("#submitNameBtn").click(function() {
 	$('.player_box').hide();
   $('#quiz').show();
-  // $('askQuestion').text('hi');
 });
 
 var quiz = document.getElementById("quiz");
@@ -29,7 +28,7 @@ var questions = [
     correct: 1
   },
   {
-    question: "Who did Harry Potter bring Yule Ball?",
+    question: "Who did Harry Potter bring to the Yule Ball?",
     choices: ["Cho Chang", "Ginny Weasley", "Parvati Patil", "Padma Patil"],
     correct: 2
   },
@@ -54,34 +53,34 @@ var questions = [
     correct: 3
   },
   {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
+    question: "What is Dumbledore's sister's name?",
+    choices: ["Ariene", "Arianne", "Alenna", "Ariana"],
+    correct: 3
+  },
+  {
+    question: "What is the magical core of Harry's wand?",
+    choices: ["Dragon's Blood", "Pheonix Tail Feather", "Pheonix Tears", "Unicorn Hair"],
+    correct: 1
+  },
+  {
+    question: "What name did Hagrid gave his pet dragon?",
+    choices: ["Sorbet", "Nugget", "Norbert", "Noburt"],
     correct: 2
   },
   {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
-    correct: 2
+    question: "What was Harry given by Professor Lupin after the first summoning of a Patronus?",
+    choices: ["Chocolate", "Chocolate Frog", "A frog", "Nothing"],
+    correct: 1
   },
   {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
-    correct: 2
+    question: "What was Harry given by Professor Lupin after the first encounter with a Dementor?",
+    choices: ["Chocolate", "Chocolate Frog", "A frog", "Nothing"],
+    correct: 0
   },
   {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
-    correct: 2
-  },
-  {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
-    correct: 2
-  },
-  {
-    question: "How many times was Nearly Headless Nick hit in the neck with a blunt axe?",
-    choices: ["25", "35", "45", "55"],
-    correct: 2
+    question: "What is the correct incantation of a Levitation Charm?",
+    choices: ["Wingadam Leviosa", "Wingardum Levosa", "Wingardium Levieosa", "Wingardium Leviosa"],
+    correct: 3
   }
 ];
 
@@ -90,7 +89,6 @@ $( document ).ready(function() {
     currentQuestion();
 	console.log(correctAnswer());
 });
-
 // You will need to declare the following functions:
 function numberOfQuestions() {
 	return questions.length;
@@ -115,12 +113,10 @@ function correctAnswer(){
 }
 // It should return an integer that is the zero-based index the correct answer for the currrent question
 
-function numberOfChoices(){
+function numberOfChoices() {
 }
-
 // It should return an integer that is the number of choices for the current question
 playTurn(choice)
-
 // It should take a single integer, which specifies which choice the current player wants to make.
 // It should return a boolean true/false if the answer is correct.
 isGameOver()

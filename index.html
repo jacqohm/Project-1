@@ -2,12 +2,14 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="utf-8">
 
     <title>The Magic Oracle</title>
+    <body>
   </head>
-  <body>
     <div class="welcome_bg_image">
 		<div id="game_logo">
 			<img src="images/project1-logo.png" id="logo"/>
@@ -19,7 +21,7 @@
           but great history only allows for one hero and I must make a choice between you two.
           <br><br>
           Challenge your friends to a battle of wits answering 10 questions
-          and the winner shall be deemed the Greatest Wizard the Oracle has seen!<br/><br/>
+          and the winner shall be deemed the Greatest Wizard ever!<br/><br/>
 			  <button id="start_quiz" class="btn btn-default" type="submit">START QUIZ</button></center>
 			  </div>
 		</div>
@@ -60,22 +62,18 @@
                         <input id="label3" type="radio" name="option" value="">
                         <label id="answer3" for=""></label>
                     </div>
+                    <button id="submitBtn">Submit</button>
                 </form>
-
-            <button id="submitBtn">Submit</button>
             </div>
         </div>
+        <section id = "showScore">
+          <h2 id="inform" class="center"></h2>
+          <button id="resetBtn">Try Again?</button>
+        </section>
       </section>
 
-      <!-- <section id = "showScore">
-        <h2 id="inform" class="center"></h2>
-        <button id="resetBtn">Try Again?</button>
-      </section> -->
 
     </div>
-
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="script.js" charset="utf-8"></script>
 </html>
