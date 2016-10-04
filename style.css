@@ -70,6 +70,18 @@ height:500px;
 text-align:center;
 }
 
+#result_box {
+clear:both;
+display:none;
+padding-top:200px;
+width:1069px;
+height:500px;
+margin-left:auto;
+margin-right:auto;
+background: url('images/scrollbg-01.png') no-repeat top left;
+}
+
+
 .player1_left {
 float:left;
 width:50%;
@@ -78,4 +90,26 @@ width:50%;
 .player2_right {
 float:right;
 width:50%;
+}
+
+.score2, .score1 {
+    display: inline-block;
+    width: 200px;
+}
+
+
+
+#quiz {
+    display: none;
+    padding-right: 60px;
+    padding-left: 72px;
+    padding-top: 21px;
+}
+#result_box{
+	color:#fff;
+	font-size:20px;
+	padding:200px;
+}
+#winner{
+	font-size:36px;
 }

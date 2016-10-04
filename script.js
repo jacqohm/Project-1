@@ -1,20 +1,6 @@
-$(document).ready(function() {
-  $("#quiz").hide();
-});
-
-$("#start_quiz").click(function() {
-	$('.welcome_box').hide();
-	$('.player_box').show();
-});
-
-// $("#submitNameBtn").click(function() {
-// 	$('.player_box').hide();
-//   $('#quiz').show();
-// });
 
 var quiz = document.getElementById("quiz");
 var askQuestion = document.getElementById("askQuestion");
-console.log(typeof(askQuestion))
 var submitBtn = document.getElementById("submitButton");
 var player1_name;
 var player2_name;
@@ -23,7 +9,12 @@ var allRadios;
 var counter = 0;
 var qnsNum;
 var score;
-var numberOfQues= 10;
+var currentPlayer = "Player 1";
+var QnsP1 = 1;
+var QnsP2 = 1;
+var scoreP1 = 0;
+var scoreP2 = 0;
+
 
 var questions = [
   {
@@ -83,69 +74,122 @@ var questions = [
   }
 ];
 
-// You will need to declare the following functions:
-function numberOfQuestions() {
-	return questions.length;
-}
+$("#start_quiz").click(function() {
+	$('.welcome_box').hide();
+	$('.player_box').show();
+});
 
-function currentQuestion(){
+function currentQuestion() {
 	if (counter < 10) {
-    console.log("hello")
     qnsNum = Math.round(Math.random() *10);
     console.log(qnsNum);
         askQuestion.innerHTML = questions[qnsNum].question;
-        for (var k = 0; k < 10; k++) {
+        for (var k = 0; k < 4; k++) {
             document.getElementById("answer" + k).innerHTML = questions[qnsNum].choices[k];
             document.getElementById("answer" + k).setAttribute("for", questions[qnsNum].choices[k]);
             document.getElementById("label" + k).setAttribute("value", questions[qnsNum].choices[k]);
         }
+    } else{
+      $('#quiz').hide();
+      $('#result_box').show();
+        if (scoreP1 > scoreP2) {
+          $('#winner').html(player1_name);
+          console.log('winner1');
+        } else if (scoreP2 > scoreP1){
+          $('#winner').html(player2_name);
+          console.log('winner2');
+        } else {
+
+          $('#result_box').html("It is a tie");
+        }
     }
+    //counter is listed ontop as a condition < 10
+    //more than assign value of 10 qns loop will break
+    counter++;
 }
 
 $("#submitNameBtn").click(function() {
   $('.player_box').hide();
   $('#quiz').show();
 	player1_name = $('#inputsm-p1').val();
-  // console.log('check', player1_name);
 	player2_name = $('#inputsm-p2').val();
 	$('#playerName').html(player1_name);
   currentQuestion();
-  console.log(currentQuestion());
+  $('#displayQnsNum').html(QnsP1);
 });
 
-$("#submitButton").click(function() {
-  console.log('hello i am called');
-})
-//enable submit button to click and go to Next Player!!!!
-//Player 2's turn automatically
-//check correct answer?
-//add on score
-//add on Qns Number
-
-// submitBtn.addEventListener("click", function() {
-//     allRadios = document.getElementsByName("option");
-//     var isChecked = false;
-//     for (var j = 0; j < allRadios.length; j++) {
-//         if (allRadios[j].checked) {
-//             isChecked = true;
-//             checkedRadio = j;
-//         }
-//     }
-//     if (!(isChecked)) {
-//         alert("Please select an answer before moving on");
-//     } else {
-//         getResults();
-//         counter++;
-//         displayQnsNum.innerHTML = counter;
-//         currentQuestion();
-//     }
-// });
-
-//to check for results
-//get player 1 score compare with player 2
-function getResults() {
-  if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
-    score++;
-    displayScore.innerHTML = score;
+submitButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  allRadios = document.getElementsByName("option");
+  var isChecked = false;
+  for (var j = 0; j < allRadios.length; j++) {
+      if (allRadios[j].checked) {
+          isChecked = true;
+          checkedRadio = j;
+          break;
+      }
   }
+  if (!(isChecked)) {
+      alert("Please select an answer before moving on");
+  } else {
+    deselectRadios();
+    getResults();
+  }
+  if(currentPlayer=="Player 1") {
+    currentPlayer ="Player 2";
+    currentQuestion();
+    $('#playerName').html(player2_name);
+    $('#displayQnsNum').html(QnsP2);
+    QnsP2++;
+  } else {
+    QnsP1++;
+    currentPlayer ="Player 1";
+    currentQuestion();
+    $('#playerName').html(player1_name);
+    $('#displayQnsNum').html(QnsP1);
+  }
+});
+
+resetBtn.addEventListener("click", function() {
+  $('#quiz').hide();
+  $('#result_box').hide();
+  $('.welcome_box').show();
+  QnsP1 = 1;
+  QnsP2 = 1;
+  counter = 0;
+  currentPlayer = 'Player 1';
+  deselectRadios();
+});
+
+//get all the elements with "option" which is my radio buttons!
+function deselectRadios() {
+    allRadios = document.getElementsByName("option");
+    for (var p = 0; p < allRadios.length; p++) {
+        allRadios[p].checked = false;
+    }
 }
+
+function getResults() {
+  console.log("corret ans "+questions[qnsNum].choices[questions[qnsNum].correct]);
+        if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
+              if (currentPlayer=="Player 1"){
+                scoreP1++;
+                $('#displayScore1').html(scoreP1);
+                console.log(currentPlayer + scoreP1);
+              } else {
+                scoreP2++;
+                $('#displayScore2').html(scoreP2);
+                console.log(currentPlayer + scoreP2);
+              }
+        }
+}
+
+
+
+//
+// function getResults() {
+//   if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
+//     score++;
+//     displayScore.innerHTML = score;
+//   }
+// }

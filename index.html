@@ -16,13 +16,14 @@
 		</div>
 
 		<div class="welcome_box">
-			<div class="welcome_content">Welcome to The Magic Oracle!
-			  <center>All who stand before me now is destined to be a Great Wizard,
+			<div class="welcome_content"><center>
+          Welcome to The Magic Oracle!<br><br>
+          All who stand before me now is destined to be a Great Wizard,
           but great history only allows for one hero and I must make a choice between you two.
           <br><br>
           Challenge your friends to a battle of wits answering 10 questions
           and the winner shall be deemed the Greatest Wizard ever!<br/><br/>
-			  <button id="start_quiz" class="btn btn-default" type="submit">START QUIZ</button></center>
+			  <button id="start_quiz" class="btn btn-default" type="button">START QUIZ</button></center>
 			  </div>
 		</div>
 
@@ -38,14 +39,15 @@
 			</div>
 			<div style="clear:both"></div>
       <br><br>
-        <button id="submitNameBtn" class="btn btn-default" type="submit">SUBMIT</button>
+        <button id="submitNameBtn" class="btn btn-default" type="button">SUBMIT</button>
 		</div>
 
     <div id ="quiz" class="black_bg">
       <h3 class ="greeting">Hello <span id ="playerName">Player 1</span>, please answer the question!</h3>
               <div>
-                <h4 class="score">Score: <span id="displayScore">0</span></h4>
-                <h4 class="QnsNum">Question: <span id="displayQnsNum">1</span>of 10</h4>
+                <h4 class="score1">Score Player 1: <span id="displayScore1">0</span></h4>
+                <h4 class="score2">Score Player 2: <span id="displayScore2">0</span></h4>
+                <h4 class="QnsNum">Question: <span id="displayQnsNum">1</span> of 5</h4>
               </div>
               <div>
                 <h2 class id="askQuestion" class="center"></h2>
@@ -68,12 +70,20 @@
                     </div>
                     <div>
                     <br>
-                    <button id="submitButton" class="btn btn-default">SUBMIT</button>
+                    <button id="submitButton" class="btn btn-default" type="button">SUBMIT</button>
                     </div>
                 </form>
               </div>
           <br>
+          <div>
           <button id="resetBtn" class="btn btn-default" type="">RESTART</button>
+        </div>
+    </div>
+
+    <div id ="result_box">
+      Congratulations young one for you have proved yourselves worthy of the wand!<br/>
+      <span id ="winner"></span> are the Greatest Wizard in the land!
+      <!-- <button id="resetBtn" class="btn btn-default" type="">RESTART</button> -->
     </div>
 
   </body>
