@@ -7,19 +7,21 @@ $("#start_quiz").click(function() {
 	$('.player_box').show();
 });
 
-$("#submitNameBtn").click(function() {
-	$('.player_box').hide();
-  $('#quiz').show();
-});
+// $("#submitNameBtn").click(function() {
+// 	$('.player_box').hide();
+//   $('#quiz').show();
+// });
 
 var quiz = document.getElementById("quiz");
 var askQuestion = document.getElementById("askQuestion");
-var submitBtn = document.getElementById("submitBtn");
+console.log(typeof(askQuestion))
+var submitBtn = document.getElementById("submitButton");
 var player1_name;
 var player2_name;
 var checkedRadio;
 var allRadios;
-var i;
+var counter = 0;
+var qnsNum;
 var score;
 var numberOfQues= 10;
 
@@ -81,84 +83,69 @@ var questions = [
   }
 ];
 
-$( document ).ready(function() {
-	i=0;
-    currentQuestion();
-	console.log(correctAnswer());
-});
 // You will need to declare the following functions:
 function numberOfQuestions() {
 	return questions.length;
 }
 
-$("#submitNameBtn").click(function() {
-	player1_name = $('#inputsm-p1').val();
-  console.log('check', player1_name);
-	player2_name = $('#inputsm-p2').val();
-	$('.player_box').hide();
-	$('#quiz').show();
-	$('#playerName').html(player1_name);
-});
-
-//currentQuestion to be randomize!!!!
-//add in Math.random
 function currentQuestion(){
-	if (i < 10) {
-    var j = Math.round(Math.random() *10);
-        askQuestion.innerHTML = questions[j].question;
-        for (var k = 0; k < 4; k++) {
-            document.getElementById("answer" + k).innerHTML = questions[j].choices[k];
-            document.getElementById("answer" + k).setAttribute("for", questions[j].choices[k]);
-            document.getElementById("label" + k).setAttribute("value", questions[j].choices[k]);
+	if (counter < 10) {
+    console.log("hello")
+    qnsNum = Math.round(Math.random() *10);
+    console.log(qnsNum);
+        askQuestion.innerHTML = questions[qnsNum].question;
+        for (var k = 0; k < 10; k++) {
+            document.getElementById("answer" + k).innerHTML = questions[qnsNum].choices[k];
+            document.getElementById("answer" + k).setAttribute("for", questions[qnsNum].choices[k]);
+            document.getElementById("label" + k).setAttribute("value", questions[qnsNum].choices[k]);
         }
     }
-	return i;
 }
 
+$("#submitNameBtn").click(function() {
+  $('.player_box').hide();
+  $('#quiz').show();
+	player1_name = $('#inputsm-p1').val();
+  // console.log('check', player1_name);
+	player2_name = $('#inputsm-p2').val();
+	$('#playerName').html(player1_name);
+  currentQuestion();
+  console.log(currentQuestion());
+});
+
+$("#submitButton").click(function() {
+  console.log('hello i am called');
+})
 //enable submit button to click and go to Next Player!!!!
 //Player 2's turn automatically
-//check all radio buttons clicked
-//check correct answer
+//check correct answer?
 //add on score
 //add on Qns Number
-submitBtn.addEventListener("click", function() {
-    allRadios = document.getElementsByName("option");
-    var isChecked = false;
-    for (var j = 0; j < allRadios.length; j++) {
-        if (allRadios[j].checked) {
-            isChecked = true;
-            checkedRadio = j;
-            break;
-        }
-    }
-    if (!(isChecked)) {
-        alert("Please select an answer before moving on");
-    } else {
-        getResults();
-        deselectRadios();
-        i++;
-        displayQnsNum.innerHTML = i + 1;
-        currentQuestion();
-    }
-});
+
+// submitBtn.addEventListener("click", function() {
+//     allRadios = document.getElementsByName("option");
+//     var isChecked = false;
+//     for (var j = 0; j < allRadios.length; j++) {
+//         if (allRadios[j].checked) {
+//             isChecked = true;
+//             checkedRadio = j;
+//         }
+//     }
+//     if (!(isChecked)) {
+//         alert("Please select an answer before moving on");
+//     } else {
+//         getResults();
+//         counter++;
+//         displayQnsNum.innerHTML = counter;
+//         currentQuestion();
+//     }
+// });
 
 //to check for results
 //get player 1 score compare with player 2
 function getResults() {
-  if (allRadios[checkedRadio].value === questions[i].choices[questions[i].correct]) {
+  if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
     score++;
     displayScore.innerHTML = score;
   }
 }
-
-isGameOver()
-// It should return a true or false if the quiz is over.
-
-whoWon()
-// It should return 0 if the game is not yet over,
-// else it should return either 1 or 2 depending on which player won.
-// It should return 3 if the game is a draw.
-
-//reset button to retart game
-//return all values to 0
-restart()
