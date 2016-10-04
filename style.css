@@ -3,6 +3,9 @@ font-family: 'Dosis', sans-serif;
 margin: auto;
 }
 
+p {
+    padding-top: 50px;
+}
 .welcome_bg_image {
 background: url('images/Project1-HP-bg-001.jpg') no-repeat top left;
 background-size:cover;
@@ -34,11 +37,25 @@ margin-right:auto;
 background: url('images/scrollbg-01.png') no-repeat top left;
 }
 
-input#inputsm {
+.black_bg{
+	clear:both;
+	width:900px;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+	background: url('images/black-bg-0pa70.png') no-repeat top left;
+	color:#fff;
+}
+
+input#inputsm-p1 {
     width: 70%;
     margin-left: 80px;
 }
 
+input#inputsm-p2 {
+    width: 70%;
+    margin-left: 80px;
+}
 .welcome_content {
 opacity:1 !important;
 }
@@ -48,7 +65,7 @@ clear:both;
 display:none;
 margin-left:auto;
 margin-right:auto;
-width:1069px;
+width:950px;
 height:500px;
 text-align:center;
 }

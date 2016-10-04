@@ -26,25 +26,29 @@
 			  </div>
 		</div>
 
-		<div class="player_box">
+		<div class="black_bg player_box">
 			<p>Name yourself before starting the challenge!</p>
 			<div class="player1_left">
         <label for="inputsm">Player 1: </label>
-        <input class="form-control input-sm" id="inputsm" type="text">
+        <input class="form-control input-sm" id="inputsm-p1" type="text">
 			</div>
 			<div class="player2_right">
         <label for="inputsm">Player 2: </label>
-        <input class="form-control input-sm" id="inputsm" type="text">
+        <input class="form-control input-sm" id="inputsm-p2" type="text">
 			</div>
 			<div style="clear:both"></div>
       <br><br>
         <button id="submitNameBtn" class="btn btn-default" type="submit">SUBMIT</button>
 		</div>
 
-        <section id ="quiz">
-        <div>
-        	<div style="background-color:#fff;">
-                <h2 id="askQuestion" class="center"></h2>
+    <div id ="quiz" class="black_bg">
+      <h3 class ="greeting">Hello <span id ="playerName">Player 1</span>, please answer the question!</h3>
+              <div>
+                <h4 class="score">Score: <span id="displayScore">0</span></h4>
+                <h4 class="QnsNum">Question: <span id="displayQnsNum">1</span>of 10</h4>
+              </div>
+              <div>
+                <h2 class id="askQuestion" class="center"></h2>
                 <form id="form">
                     <div>
                         <input id="label0" type="radio" name="option" value="">
@@ -62,18 +66,16 @@
                         <input id="label3" type="radio" name="option" value="">
                         <label id="answer3" for=""></label>
                     </div>
-                    <button id="submitBtn">Submit</button>
+                    <div>
+                    <br>
+                    <button id="submitBtn" class="btn btn-default" type="submit">SUBMIT</button>
+                    </div>
                 </form>
-            </div>
-        </div>
-        <section id = "showScore">
-          <h2 id="inform" class="center"></h2>
-          <button id="resetBtn">Try Again?</button>
-        </section>
-      </section>
-
-
+              </div>
+          <br>
+          <button id="resetBtn" class="btn btn-default" type="reset">RESTART</button>
     </div>
+
   </body>
   <script src="script.js" charset="utf-8"></script>
 </html>
