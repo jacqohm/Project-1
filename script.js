@@ -10,7 +10,6 @@ $(document).ready(function ($) {
   var allRadios
   var counter = 0
   var qnsNum
-  // var score
   var currentPlayer = 'Player 1'
   var QnsP1 = 1
   var QnsP2 = 1
@@ -79,17 +78,7 @@ $(document).ready(function ($) {
     $('.welcome_box').hide()
     $('.player_box').show()
   })
-  // var getRand = (function() {
-  //     var nums = [0,1,2,3,4,5,6]
-  //     var current = []
-  //     function rand(n) {
-  //         return (Math.random() * n)|0
-  //     }
-  //     return function() {
-  //       if (!current.length) current = nums.slice()
-  //       return current.splice(rand(current.length), 1)
-  //     }
-  // }())
+
   function currentQuestion () {
     if (counter < 10) {
       qnsNum = Math.round(Math.random() * questions.length)
@@ -193,7 +182,6 @@ $(document).ready(function ($) {
         // console.log(currentPlayer + scoreP2)
       }
     }
-
     questions.splice(qnsNum, 1)
   }
 
