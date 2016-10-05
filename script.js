@@ -81,7 +81,8 @@ $(document).ready(function ($) {
 
   function currentQuestion () {
     if (counter < 10) {
-      qnsNum = Math.round(Math.random() * questions.length)
+      qnsNum = Math.floor(Math.random() * (questions.length - 1))
+      console.log(questions, qnsNum)
       // console.log('qnsNum now is', qnsNum, 'out of', questions.length)
       askQuestion.innerHTML = questions[qnsNum].question
       for (var k = 0; k < 4; k++) {
@@ -99,7 +100,8 @@ $(document).ready(function ($) {
         $('#winner').html(player2_name)
       // console.log('winner2')
       } else {
-        $('#result_box').html('It is a tie')
+        $('#result_box').html('It\'s a tie')
+        // location.reload();
       }
     }
     // counter is listed ontop as a condition < 10
@@ -133,19 +135,19 @@ $(document).ready(function ($) {
     } else {
       deselectRadios()
       getResults()
-    }
-    if (currentPlayer === 'Player 1') {
-      currentPlayer = 'Player 2'
+
+      if (currentPlayer === 'Player 1') {
+        currentPlayer = 'Player 2'
+        $('#playerName').html(player2_name)
+        $('#displayQnsNum').html(QnsP2)
+        QnsP2++
+      } else {
+        QnsP1++
+        currentPlayer = 'Player 1'
+        $('#playerName').html(player1_name)
+        $('#displayQnsNum').html(QnsP1)
+      }
       currentQuestion()
-      $('#playerName').html(player2_name)
-      $('#displayQnsNum').html(QnsP2)
-      QnsP2++
-    } else {
-      QnsP1++
-      currentPlayer = 'Player 1'
-      currentQuestion()
-      $('#playerName').html(player1_name)
-      $('#displayQnsNum').html(QnsP1)
     }
   })
 
@@ -169,7 +171,7 @@ $(document).ready(function ($) {
   }
 
   function getResults () {
-    console.log(qnsNum, questions[qnsNum])
+    // console.log(qnsNum, questions[qnsNum])
     // console.log('corret ans ' + questions[qnsNum].choices[questions[qnsNum].correct])
     if (allRadios[checkedRadio].value === questions[qnsNum].choices[questions[qnsNum].correct]) {
       if (currentPlayer === 'Player 1') {
