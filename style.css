@@ -63,6 +63,7 @@ input#inputsm-p2 {
     width: 70%;
     margin-left: 80px;
 }
+
 .welcome_content {
 opacity:1 !important;
 }
@@ -113,14 +114,20 @@ width:50%;
     padding-top: 21px;
 }
 
-#result_message {
-	color:#fff;
-	font-size:20px;
-	padding:200px;
+#resultmessage {
+  font-family: 'Berkshire Swash', cursive!important;
+	font-size:25px;
 }
 
-#winner{
-	font-size:36px;
+#winner {
+	font-size:42px;
+  color: rgb(255, 255, 255) !important;
+  font-family: 'Berkshire Swash', cursive!important;
+}
+
+#tieMessage {
+  display: none;
+  font-size:36px;
   font-family: 'Berkshire Swash', cursive!important;
 }
 
