@@ -88,8 +88,8 @@ $(document).ready(function ($) {
       askQuestion.innerHTML = questions[qnsNum].question
       for (var k = 0; k < 4; k++) {
         document.getElementById('answer' + k).innerHTML = questions[qnsNum].choices[k]
-        document.getElementById('answer' + k).setAttribute('value', questions[qnsNum].choices[k])
-        document.getElementById('label' + k).setAttribute('for', questions[qnsNum].choices[k])
+        document.getElementById('answer' + k).setAttribute('for', questions[qnsNum].choices[k])
+        document.getElementById('label' + k).setAttribute('value', questions[qnsNum].choices[k])
       }
     } else {
       $('#quiz').hide()
