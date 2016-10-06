@@ -1,8 +1,8 @@
 # Project-1
 
-<h1>Harry Potter and The Magic Oracle</h1>
+<h2>Harry Potter and The Magic Oracle</h2>
 
-This is a <strong>Two Player Trivia Quiz</strong> which allows two friends to challenge each other either than a game of Quidditch.
+This is a <strong>Two Player Quiz Game</strong> which allows two friends to challenge each other either than a game of Quidditch.
 Just beat your friends by having all the right answers to 5 questions and The Magic Oracle will reveal the Greatest Wizard in land!
 <br>
 <li>Player 1 will start off the game by answering the first question followed by Player 2.</li>
@@ -27,4 +27,4 @@ Just beat your friends by having all the right answers to 5 questions and The Ma
 
 
 
-<h2>By Jacq</h2>
+By Jacq
