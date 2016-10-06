@@ -121,6 +121,7 @@ width:50%;
 
 #winner{
 	font-size:36px;
+  font-family: 'Berkshire Swash', cursive!important;
 }
 
 .btn-default:focus, .btn-default:active:focus {

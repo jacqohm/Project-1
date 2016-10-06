@@ -100,8 +100,8 @@ $(document).ready(function ($) {
         $('#winner').html(player2_name)
       // console.log('winner2')
       } else {
-        $('#result_box').html('It\'s a tie')
-        // location.reload();
+        $('#resultmessage').html('It\'s a tie')
+        $('#displayBtn').show()
       }
     }
     // counter is listed ontop as a condition < 10
