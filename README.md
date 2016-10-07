@@ -14,7 +14,10 @@ Beat your friends by having all the right answers to 5 questions and The Magic O
 ![Alt text](http://gdurl.com/mLBE "Player page")
 
 <br>
-<h2>Desert of Despair : Difficulties</h2>
+<h2>Desert of Despair : Difficulties</h2><h3>Language</h3>
+JavaScript
+Jquery
+Bootstrap
 <br>
 1. Submit button why you refresh my game?!
 <br>
@@ -45,4 +48,4 @@ https://www.youtube.com/watch?v=Htaj3o3JD8I
 
 
 <br>
-By Jacq
+Jacq.C
