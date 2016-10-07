@@ -18,18 +18,29 @@ Beat your friends by having all the right answers to 5 questions and The Magic O
 <br>
 1. Submit button why you refresh my game?!
 <br>
-Note: 
-   
+Solution: 
+<br>
+submitButton.addEventListener('click', function (e) {
+    e.preventDefault()
+<br>    
 2. Random questions why you keep repeating?!
+<br>
+Solution:
+questions.splice(qnsNum, 1)
 
-
-
-
-
+<br>
 <h3>Credits</h3> 
+Prima, Kailin, Glen
+<br>
+My coursemates ;)
+<br>
+Code reference from:
+http://codepen.io/clamclam/pen/aNxreL
+<br>
 Audio Track from:
 https://www.youtube.com/watch?v=Htaj3o3JD8I
 
+Play the game: 
 
 
 
