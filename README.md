@@ -13,8 +13,15 @@ Beat your friends by having all the right answers to 5 questions and The Magic O
 
 ![Alt text](http://gdurl.com/mLBE "Player page")
 
+<br>
+<h2>Desert of Despair : Difficulties</h2>
+<br>
+1. Submit button why you refresh my game?!
+<br>
+Note: 
+   
+2. Random questions why you keep repeating?!
 
-<h3>Desert of Despair : Difficulties</h3>
 
 
 
