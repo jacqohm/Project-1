@@ -26,6 +26,7 @@ submitButton.addEventListener('click', function (e) {
 2. Random questions why you keep repeating?!
 <br>
 Solution:
+<br>
 questions.splice(qnsNum, 1)
 
 <br>
@@ -39,22 +40,9 @@ http://codepen.io/clamclam/pen/aNxreL
 <br>
 Audio Track from:
 https://www.youtube.com/watch?v=Htaj3o3JD8I
-
-Play the game: 
-
-
+<br>
+<h3>Play the game:</h3> (https://jacqohm.github.io/Project-1/)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
 By Jacq
